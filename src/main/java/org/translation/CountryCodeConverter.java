@@ -68,7 +68,13 @@ public class CountryCodeConverter {
      * @return the 3-letter code of the country
      */
     public String fromCountry(String country) {
-        return countryCodes.get(country);
+        String code = null;
+        for (Map.Entry<String, String> entry : countryCodes.entrySet()) {
+            if (entry.getValue().equals(country)) {
+                code = entry.getKey();
+            }
+        }
+        return code;
     }
 
     /**
